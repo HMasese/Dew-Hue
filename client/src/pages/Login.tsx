@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Input, Button } from "@heroui/react";
 import { useNavigate } from "react-router-dom";
+import './Login.css'
 
 
 export default function Login() {
@@ -9,7 +10,7 @@ export default function Login() {
 
   return (
     <Form
-      className="w-full max-w-xs flex flex-col gap-4"
+      className="e"
       validationBehavior="native"
       onSubmit={async (e) => {
         e.preventDefault();
@@ -42,7 +43,7 @@ export default function Login() {
       }}
     >
 
-      <Input
+      <Input id="email"
         isRequired
         errorMessage="Please enter a valid email"
         labelPlacement="outside"
@@ -51,7 +52,7 @@ export default function Login() {
         type="email"
       />
 
-      <Input
+      <Input id="password"
         isRequired
         errorMessage="Please enter a valid password"
         labelPlacement="outside"
@@ -59,19 +60,19 @@ export default function Login() {
         placeholder="Enter your password"
         type="password"
       />
-      <div className="flex gap-2">
-        <Button color="primary" type="submit">
+      <div className="flex gap-2" id="login">
+        <Button color="primary" type="submit" id="login">
           Login
         </Button>
 
       </div>
-      {action && (
+      {/* {action && (
         <div className="text-small text-default-500">
           Action: <code>{action}</code>
         </div>
 
 
-      )}
+      )} */}
 
     </Form>
   );
