@@ -1,5 +1,5 @@
 import { defineConfig } from 'cypress';
-import customViteConfig from '../../vite.config';
+import customViteConfig from '../../server/src/config/vite.config';
 
 export default defineConfig({
   component: {

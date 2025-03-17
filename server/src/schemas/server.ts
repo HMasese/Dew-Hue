@@ -1,11 +1,12 @@
 import express from 'express';
 import path from 'node:path';
 import type { Request, Response } from 'express';
-import db from './config/connection.js'
+import db from '../config/connection.js'
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
-import { typeDefs, resolvers } from './schemas/index.js';
-import { authenticateToken } from './utils/auth.js';
+import { typeDefs, resolvers } from './index.js';
+import { authenticateToken } from '../utils/auth.js';
+import bodyParser from 'body-parser';
 
 const server = new ApolloServer({
   typeDefs,
@@ -19,14 +20,12 @@ const startApolloServer = async () => {
   const PORT = process.env.PORT || 3001;
   const app = express();
 
-  app.use(express.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
   app.use(express.json());
 
-  app.use('/graphql', expressMiddleware(server as any,
-    {
-      context: authenticateToken as any
-    }
-  ));
+app.use('/graphql', expressMiddleware(server, {
+  context: async ({ req }) => ({ token: authenticateToken(req) })
+}));
 
     app.use(express.static(path.join(process.cwd(), '../client/dist')));
 
