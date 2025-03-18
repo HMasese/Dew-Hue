@@ -1,8 +1,11 @@
+import './Home.css';
+
 const Home = () => {
 
   return (
     <main>
-      <h1>Home</h1>
+      <div id="makeup"></div>
+      <div id="saved"></div>
     </main>
   );
 };
