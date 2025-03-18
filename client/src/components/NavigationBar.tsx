@@ -20,7 +20,7 @@ const NavigationBar = () => {
             <h1 className="m-0">Sign Up</h1>
           </Link>
         </li>
-              <h1 id="HewDue">Hew-Due</h1>
+              <h1 id="Dew-Hue">Dew-Hue</h1>
       </ul>
     </body>
   );
