@@ -39,11 +39,22 @@
   },
   "dependencies": {
     "@apollo/server": "^4.11.3",
+    "@heroui/react": "^2.7.5",
     "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
     "@types/mongoose": "^5.11.96",
     "express": "^4.21.2",
+    "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
+    "jwt-decode": "^4.0.0",
     "mongoose": "^8.12.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HMasese/Dew-Hue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HMasese/Dew-Hue/issues"
+  },
+  "homepage": "https://github.com/HMasese/Dew-Hue#readme"
 }
