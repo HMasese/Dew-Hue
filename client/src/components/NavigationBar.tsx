@@ -27,6 +27,7 @@ const NavigationBar = () => {
         </li>
               <h1 id="Dew-Hue">Dew-Hue</h1>
       </ul>
+      <h1 id="Dew-Hue">Dew-Hue</h1>
     </body>
   );
 }
