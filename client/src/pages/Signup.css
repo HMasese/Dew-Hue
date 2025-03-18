@@ -14,23 +14,23 @@
 #username {
     margin: 10px;
     height: 5vh;
-    width: 50vh;
+    width: 35vw;
 }
 #email {
     margin: 10px;
     height: 5vh;
-    width: 50vh;
+    width: 35vw;
 }
 
 #password {
     margin: 10px;
     height: 5vh;
-    width: 50vh;
+    width: 35vw;
 }
 
 #signup { 
-    margin: 10px;
+    margin: 13px;
     height: 5vh;
-    width: 50vh;
+    width: 35vw;
     color: white;
 }
