@@ -1,0 +1,36 @@
+#signup-form {
+    width: fit-content;
+    max-height: fit-content;
+    margin-top: 30vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: pink;
+    justify-content: center;
+    border-radius: 9px;
+    }
+
+
+#username {
+    margin: 10px;
+    height: 5vh;
+    width: 50vh;
+}
+#email {
+    margin: 10px;
+    height: 5vh;
+    width: 50vh;
+}
+
+#password {
+    margin: 10px;
+    height: 5vh;
+    width: 50vh;
+}
+
+#signup { 
+    margin: 10px;
+    height: 5vh;
+    width: 50vh;
+    color: white;
+}

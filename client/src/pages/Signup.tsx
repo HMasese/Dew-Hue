@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Input, Button } from "@heroui/react";
 import { useNavigate } from "react-router-dom";
+import './Signup.css'
 
 export default function Signup() {
   const [action, setAction] = React.useState('');
@@ -8,7 +9,7 @@ export default function Signup() {
 
   return (
     <Form
-      className="w-full max-w-xs flex flex-col gap-4"
+      className="w-full max-w-xs flex flex-col gap-4" id="signup-form"
       validationBehavior="native"
       onSubmit={async (e) => {
         e.preventDefault();
@@ -38,7 +39,7 @@ export default function Signup() {
         }
       }}
     >
-      <Input
+      <Input id="username"
         isRequired
         errorMessage="Please enter a valid username"
         labelPlacement="outside"
@@ -47,7 +48,7 @@ export default function Signup() {
         type="text"
       />
 
-      <Input
+      <Input id="email"
         isRequired
         errorMessage="Please enter a valid email"
         labelPlacement="outside"
@@ -56,7 +57,7 @@ export default function Signup() {
         type="email"
       />
 
-      <Input
+      <Input id="password"
         isRequired
         errorMessage="Please enter a valid password"
         labelPlacement="outside"
@@ -64,8 +65,8 @@ export default function Signup() {
         placeholder="Enter your password"
         type="password"
       />
-      <div className="flex gap-2">
-        <Button color="primary" type="submit">
+      <div className="flex gap-2" id="signup">
+        <Button color="primary" type="submit" id="signup">
           Signup
         </Button>
       </div>
