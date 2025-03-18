@@ -1,0 +1,32 @@
+* {
+    font-family: 'poppins', sans-serif;
+}
+
+a {
+    color: pink;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+.nav {
+    display: flex;
+    justify-content: left;
+    background-color: #664d48;
+    list-style-type: none;
+    border-bottom: 5px solid pink;
+}
+
+.navItem {
+    margin-right: 50px;
+    margin-bottom: 5px;
+    color: pink !important;
+}
+
+#HewDue {
+    color: pink;
+    position: fixed;
+    left: 91%;
+}
