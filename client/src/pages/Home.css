@@ -1,25 +1,44 @@
 #makeup {
     display: flex;
     background-color: pink;
-    height: 60vh;
+    height: 35vh;
     width: 94.5vw;
     margin: auto;
     position: relative;
-    top: 3vh;
+    top: 10vh;
     right: 16vw;
     border-radius: 10px;
     border: 5px solid #664d48;
+    align-items: center;
+    justify-content: center;
 }
 
-#saved {
+#sloganCon {
     display: flex;
     background-color: pink;
     height: 20vh;
     width: 94.5vw;
     margin: auto;
     position: relative;
-    top: 8vh;
+    top: 22vh;
     right: 16vw;
     border-radius: 10px;
     border: 5px solid #664d48;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro {
+    color: #664d48;
+    font-size: 2em;
+    text-align: center;
+
+    font-weight: bold;
+}
+
+#slogan {
+    color: #664d48;
+    font-size: 4em;
+    text-decoration: underline;
+    font-weight: bold;
 }
