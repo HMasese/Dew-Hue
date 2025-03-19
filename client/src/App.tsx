@@ -9,6 +9,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -45,5 +46,26 @@ function App() {
     </ApolloProvider>
   );
 }
+/* includes login/sign up, as well as a logout button if the user is logged in */
+// {Auth.loggedIn() ? (
+//   <>
+//     <Link className="btn btn-lg btn-info m-2" to="/me">
+//       {/* Retrieving the logged-in user's profile to display the username */}
+//       {Auth.getProfile().data.username}'s profile
+//     </Link>
+//     <button className="btn btn-lg btn-light m-2" onClick={Auth.logout}>
+//       Logout
+//     </button>
+//   </>
+// ) : (
+//   <>
+//     <Link className="btn btn-lg btn-info m-2" to="/login">
+//       Login
+//     </Link>
+//     <Link className="btn btn-lg btn-light m-2" to="/signup">
+//       Signup
+//     </Link>
+//   </>
+// )}
 
 export default App;

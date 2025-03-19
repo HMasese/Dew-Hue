@@ -6,6 +6,7 @@ interface IUser extends Document {
   username: string;
   email: string;
   password: string;
+  products: Schema.Types.ObjectId[];
   isCorrectPassword(password: string): Promise<boolean>;
 }
 
@@ -28,7 +29,11 @@ const userSchema = new Schema<IUser>(
       type: String,
       required: true,
       minlength: 5,
-    }
+    },
+    products: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Product'
+    }]
   },
   {
     timestamps: true,

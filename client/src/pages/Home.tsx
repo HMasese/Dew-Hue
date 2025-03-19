@@ -7,6 +7,7 @@ const Home = () => {
       <div id="makeup"></div>
       <div id="saved"></div>
     </main>
+    
   );
 };
 
