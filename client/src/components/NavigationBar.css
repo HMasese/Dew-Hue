@@ -30,3 +30,34 @@ a:hover {
     position: fixed;
     left: 91%;
 }
+
+/* Mobile Media Queries */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    
+    .navItem {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    #Dew-Hue {
+        position: static;
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .navItem {
+        font-size: 14px;
+    }
+    
+    #Dew-Hue {
+        font-size: 16px;
+    }
+}

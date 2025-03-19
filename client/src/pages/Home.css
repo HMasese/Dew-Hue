@@ -42,3 +42,34 @@
     text-decoration: underline;
     font-weight: bold;
 }
+
+/* Mobile Media Queries */
+@media (max-width: 768px) {
+    #makeup, #sloganCon {
+        width: 90vw;
+        height: auto;
+        right: 0;
+        top: 5vh;
+        padding: 10px;
+    }
+    
+    #intro {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+    
+    #slogan {
+        font-size: 2.5em;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #intro {
+        font-size: 1.2em;
+    }
+    
+    #slogan {
+        font-size: 2em;
+    }
+}
