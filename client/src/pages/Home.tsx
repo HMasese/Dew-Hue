@@ -11,6 +11,7 @@ const Home = () => {
         <p id='slogan'>Flawless Looks, Perfect Picks, Just for You.</p>
         </div>
     </main>
+    
   );
 };
 

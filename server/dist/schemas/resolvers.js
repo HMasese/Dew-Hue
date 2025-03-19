@@ -1,4 +1,4 @@
-import { User } from '../models/index.js';
+import { User, Product } from '../models/index.js';
 import { signToken, AuthenticationError } from '../utils/auth.js';
 const resolvers = {
     Query: {
@@ -45,7 +45,20 @@ const resolvers = {
             const token = signToken(user.username, user.email, user._id);
             // Return the token and the user
             return { token, user };
+        },
+        saveProduct: async (_parent, { name, image, brand, price, link }, context) => {
+            // If the user is authenticated, find and update the user's information
+            if (context.user) {
+                const product = await Product.create({ name, image, brand, price, link });
+                return User.findOneAndUpdate({ _id: context.user._id }, {
+                    $addToSet: { products: product._id } // Add the new product to the user's products array                                   
+                });
+            }
+            else {
+                // If the user is not authenticated, throw an AuthenticationError
+                throw new AuthenticationError('You need to be logged in!');
+            }
         }
-    },
+    }
 };
 export default resolvers;

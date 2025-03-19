@@ -21,6 +21,23 @@ export const ADD_USER = gql`
     }
     token
   }
+}`
+
+export const SAVE_PRODUCT = gql`
+mutation saveProduct($name: String!, $image: String!, $brand: String!, $price: String!, $link: String!) {
+  saveProduct(name: $name, image: $image, brand: $brand, price: $price, link: $link) {
+    _id
+    email
+    username
+    products {
+      _id
+      name
+      image
+      brand
+      price
+      link
+    }
+  }
 }
 `;
 
