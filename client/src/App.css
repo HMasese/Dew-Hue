@@ -9,6 +9,7 @@
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   /* 2 */
 }
 
@@ -190,7 +191,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  -webkit-appearance: button;
+  -webkit: none;
 }
 
 /**
@@ -281,7 +282,7 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type='search'] {
-  -webkit-appearance: textfield;
+  -webkit: textfield;
   /* 1 */
   outline-offset: -2px;
   /* 2 */
@@ -369,7 +370,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'poppins','JetBrains Mono', monospace;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
@@ -422,15 +423,6 @@ button {
   margin: 0;
 }
 
-a {
-  color: #1b89bc;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
 
 /* HEIGHT / WIDTH UTILS */
 .w-100 {
@@ -920,7 +912,7 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: #664d48 !important;
 }
 
 .bg-info {
@@ -1127,8 +1119,8 @@ form .form-textarea {
 }
 
 form select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  -webkit: none;
+  -moz: none;
   background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
   background-repeat: no-repeat;
   background-position-x: 98%;

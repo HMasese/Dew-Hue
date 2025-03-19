@@ -1,71 +1,80 @@
-import React from "react";
+import React,{useState} from "react";
 import { Form, Input, Button } from "@heroui/react";
-import { useNavigate } from "react-router-dom";
+import './Signup.css'
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
+import { ChangeEvent, FormEvent } from "react";
 
 export default function Signup() {
-  const [action, setAction] = React.useState('');
-  const navigate = useNavigate();
+  const [action] = React.useState('');
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+  const [addUser] = useMutation(ADD_USER);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { input: { ...formState } },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
     <Form
-      className="w-full max-w-xs flex flex-col gap-4"
+      className="w-full max-w-xs flex flex-col gap-4" id="signup-form"
       validationBehavior="native"
-      onSubmit={async (e) => {
-        e.preventDefault();
-        let data = Object.fromEntries(new FormData(e.currentTarget));
-        try {
-          const response = await fetch("/api/patient/signup", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          });
-          const result = await response.json();
-          console.log(result);
-          if (response.ok) {
-            localStorage.setItem("token", result.token); // Store the token
-
-            if (result.redirect) {
-              navigate(result.redirect); // Redirect to User page
-            }
-          } else {
-            setAction(result.message || "Login failed");
-          }
-        } catch (error) {
-          console.error("Error:", error);
-          setAction("Error submitting form");
-        }
-      }}
+      onSubmit= {handleFormSubmit}
     >
-      <Input
+      <Input id="username"
         isRequired
         errorMessage="Please enter a valid username"
         labelPlacement="outside"
-        name="name"
+        name="username"
         placeholder="Enter your username"
         type="text"
+        onChange={handleChange}
       />
 
-      <Input
+      <Input id="email"
         isRequired
         errorMessage="Please enter a valid email"
         labelPlacement="outside"
         name="email"
         placeholder="Enter your email"
         type="email"
+        onChange={handleChange}
       />
 
-      <Input
+      <Input id="password"
         isRequired
         errorMessage="Please enter a valid password"
         labelPlacement="outside"
         name="password"
         placeholder="Enter your password"
         type="password"
+        onChange={handleChange}
       />
-      <div className="flex gap-2">
-        <Button color="primary" type="submit">
+      <div className="flex gap-2" id="signup">
+        <Button color="primary" type="submit" id="signup">
           Signup
         </Button>
       </div>
