@@ -42,7 +42,6 @@
   },
   "dependencies": {
     "@apollo/server": "^4.11.3",
-    "@heroui/react": "^2.7.5",
     "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
     "@types/mongoose": "^5.11.96",

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-// import React, { useState } from 'react';
+import './Skin.css';
 
 const Skin: React.FC = () => {
     const [brand, setBrand] = useState('');
